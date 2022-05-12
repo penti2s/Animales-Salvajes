@@ -5,7 +5,7 @@ class Leon extends Animal{
         super(nombre, edad, img, comentarios, sonido)
     }
     Rugir(){
-        console.log('Rugir')
+        console.log(`${this.sonido}`)
     }
 }
 
@@ -14,7 +14,7 @@ class Lobo extends Animal{
         super(nombre, edad, img, comentarios, sonido)
     }
     Aullar(){
-        console.log('Aullar')
+        console.log(`${this.sonido}`)
     }
 }
 
@@ -23,7 +23,7 @@ class Oso extends Animal{
         super(nombre, edad, img, comentarios, sonido)
     }
     Gruñir(){
-        console.log('Gruñir')
+        console.log(`${this.sonido}`)
     }
 }
 
@@ -32,7 +32,7 @@ class Serpiente extends Animal{
         super(nombre, edad, img, comentarios, sonido)
     }
     Sisear(){
-        console.log('Sisear')
+        console.log(`${this.sonido}`)
     }
 }
 
@@ -41,7 +41,7 @@ class Aguila extends Animal{
         super(nombre, edad, img, comentarios, sonido)
     }
     Chillar(){
-        console.log('Chillar')
+        console.log(`${this.sonido}`)
     }
 }
 
