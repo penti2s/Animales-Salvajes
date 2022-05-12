@@ -19,6 +19,9 @@ export default class Animal{
     get sonido(){
         return this._sonido()
     }
+    get comentarios(){
+        return this._comentarios()
+    }
     set comentarios(comentario){
         this._comentarios = () => comentario
     }

@@ -110,6 +110,7 @@ window.modal = (id) => {
     <img  src="${animalesTabla[id].img}"  class="card-img-top" style="height: 10rem;" alt="...">
     <div class="card-body">
         <h5 class="card-title">${animalesTabla[id].nombre}</h5>
+        <p class="card-text">Comentarios : ${animalesTabla[id].comentarios}</p>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Edad : ${animalesTabla[id].edad}</li>
