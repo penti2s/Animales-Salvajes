@@ -30,20 +30,25 @@ document.querySelector('#btnRegistrar').addEventListener('click', () => {
     const edad = document.querySelector('#edad').value;
     const comentarios = document.querySelector('#comentarios').value;
     const previewImg = document.querySelector('#preview');
+
     const imgSrc = previewImg.style.backgroundImage.slice(5, -2);
     let sonido = animales.find( a => a.name === nombre).sonido
-    console.log(sonido)
     if(nombre !== '' && edad !== '' && comentarios !== '' && imgSrc !== ''){
         if(nombre === 'Leon'){
             animalesTabla.push(new Leon(nombre, edad, imgSrc, comentarios, `/assets/sounds/${sonido}`))
+            cleanForm()
         }else if(nombre === 'Lobo'){
             animalesTabla.push(new Lobo(nombre, edad, imgSrc, comentarios, `/assets/sounds/${sonido}`))
+            cleanForm()
         }else if(nombre === 'Oso'){
             animalesTabla.push(new Oso(nombre, edad, imgSrc, comentarios, `/assets/sounds/${sonido}`))
+            cleanForm()
         }else if(nombre === 'Serpiente'){
             animalesTabla.push(new Serpiente(nombre, edad, imgSrc, comentarios, `/assets/sounds/${sonido}`))
+            cleanForm()
         }else if (nombre === 'Aguila'){
             animalesTabla.push(new Aguila(nombre, edad, imgSrc, comentarios, `/assets/sounds/${sonido}`))
+            cleanForm()
         }
     }else{
         alert('Todos los campos son obligatorios')
@@ -59,3 +64,10 @@ document.querySelector('#animal').addEventListener('change', async (e) => {
     let img = animales.find( a => a.name === nombre).imagen
     previewImg.style.backgroundImage = `url(/assets/imgs/${img})`
 })
+
+function cleanForm(){
+    document.querySelector('#animal').value = '';
+    document.querySelector('#edad').value = '';
+    document.querySelector('#comentarios').value = '';
+    document.querySelector('#preview').style.backgroundImage = 'url(/assets/imgs/lion.svg)';
+}
