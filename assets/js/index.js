@@ -83,7 +83,7 @@ function createTable(animal, id) {
     console.log(animal)
     document.querySelector('#Animales').innerHTML += `
     <div class="card mx-2 my-2" style="width: 18rem;">
-    <img src="${animal.img}" class="card-img-top" style="height: 10rem;" alt="...">
+    <img  src="${animal.img}"  onclick='modal(${id})' class="card-img-top" style="height: 10rem;" alt="...">
     <div class="card-body">
         <h5 class="card-title">${animal.nombre}</h5>
     </div>
@@ -100,4 +100,24 @@ function createTable(animal, id) {
 
 window.reproducirSonido = (id) => {
     document.querySelector(`audio[src="${animalesTabla[id].sonido}"]`).play()
+}
+
+window.modal = (id) => {
+    $('#exampleModal').modal('show')
+    document.querySelector('.modal-body').innerHTML = ``
+    document.querySelector('.modal-body').innerHTML = `
+    <div class="card mx-auto" style="width: 18rem;">
+    <img  src="${animalesTabla[id].img}"  class="card-img-top" style="height: 10rem;" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">${animalesTabla[id].nombre}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Edad : ${animalesTabla[id].edad}</li>
+        <button onclick='reproducirSonido(${id})' type="button" class="btn btn-secondary">
+        <i class="fa-solid fa-play"></i>
+        <audio src="${animalesTabla[id].sonido}"></audio>
+    </button>
+    </ul>
+    </div>
+    `;
 }
